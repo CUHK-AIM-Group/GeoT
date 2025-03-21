@@ -1,0 +1,1 @@
+[IPMI 2025] GeoT: Geometry-guided Instance-dependent Transition Matrix for Semi-supervised Tooth Point Cloud Segmentation
