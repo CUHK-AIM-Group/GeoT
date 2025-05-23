@@ -1,0 +1,97 @@
+dataset_l:
+  common:
+    NAME: TeethSegSemiLDataset
+    data_root: /data/whyu/Teeth3DS
+    use_normal: True
+    num_points: 16000 #16000
+  train:
+    split: train
+  val:
+    split: val
+    presample: False
+  test:
+    split: test
+
+dataset_u:
+  common:
+    NAME: TeethSegSemiUDataset
+    data_root: /data/whyu/Teeth3DS
+    use_normal: True
+    num_points: 16000 #16000
+  train:
+    split: train
+  val:
+    split: val
+    presample: False
+  test:
+    split: test
+
+num_classes: 17
+shape_classes: 2
+num_points: 16000 #16000
+normal_channel: True
+feature_keys: pos,x,heights
+
+datatransforms:
+  train: [PointsToTensor, PointCloudScaling,PointCloudCenterAndNormalize,PointCloudJitter,ChromaticDropGPU]
+  val: [PointsToTensor, PointCloudCenterAndNormalize]
+  test: [PointsToTensor, PointCloudCenterAndNormalize]
+  vote: [PointCloudScaling]
+  kwargs:
+    jitter_sigma: 0.001
+    jitter_clip: 0.005
+    scale: [0.8, 1.2]
+    gravity_dim: 1
+    angle: [0, 1.0, 0]
+
+batch_size: 4 #6 #2
+batch_size_val: 2 #2
+batch_size_test: 2 #2
+dataloader:
+  num_workers: 6
+
+# ---------------------------------------------------------------------------- #
+# Evaluation cfgs
+# ---------------------------------------------------------------------------- #
+num_votes: 0 #10 
+refine: False 
+
+# ---------------------------------------------------------------------------- #
+# Training cfgs
+# ---------------------------------------------------------------------------- #
+
+# lr_scheduler:
+lr: 0.001
+min_lr: null
+optimizer:
+  NAME: adamw
+  weight_decay: 1.0e-4  # the best 
+
+criterion_args:
+  NAME: Poly1FocalLoss
+
+# scheduler
+epochs: 300
+sched: multistep
+decay_epochs: [210, 270]
+decay_rate: 0.1
+warmup_epochs: 0
+
+
+sched_on_epoch: True
+
+grad_norm_clip: 1
+use_voting: False
+
+# ---------------------------------------------------------------------------- #
+# io and misc
+# ---------------------------------------------------------------------------- #
+print_freq: 10
+val_freq: 250 #1 250
+test_freq: 250 #5 250
+
+# ----------------- Model related
+pretrained_path: null
+
+wandb:
+  project: PointNext-ShapeNetPart

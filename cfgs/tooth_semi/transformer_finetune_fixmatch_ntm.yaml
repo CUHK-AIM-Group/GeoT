@@ -1,0 +1,119 @@
+model:
+  NAME: WholePartSeg
+  segmentor_args:
+    NAME: PointTransformer_seg_T
+    pretrained_path: '/home/whyu/TAP/log/tooth_finetune/tooth_finetune-train-transformer_finetune-scratch_pca_end_3in_16000_0.1data_wceloss_logmax-ngpus1-seed4120-20230918-193319-2EYqtyTS87xb6itrvGnk6F/checkpoint/tooth_finetune-train-transformer_finetune-scratch_pca_end_3in_16000_0.1data_wceloss_logmax-ngpus1-seed4120-20230918-193319-2EYqtyTS87xb6itrvGnk6F_ckpt_best.pth'      # PATH_TO_PRETRAINED_WEIGHTS
+    trans_dim: 384
+    depth: 12
+    num_heads: 4
+    group_size: 32
+    num_group: 512
+    encoder_dims: 256
+    nclasses: 17
+    drop_path_rate: 0.1
+    downsample_targets: [8192, 4096, 2048]
+    extract_layers: [4, 8, 12]
+
+model_t:
+  NAME: WholePartSeg
+  segmentor_args:
+    NAME: PointTransformer_seg_T
+    pretrained_path: '/home/whyu/TAP/log/tooth_finetune/tooth_finetune-train-transformer_finetune-scratch_pca_end_3in_16000_0.1data_wceloss_logmax-ngpus1-seed4120-20230918-193319-2EYqtyTS87xb6itrvGnk6F/checkpoint/tooth_finetune-train-transformer_finetune-scratch_pca_end_3in_16000_0.1data_wceloss_logmax-ngpus1-seed4120-20230918-193319-2EYqtyTS87xb6itrvGnk6F_ckpt_best.pth'      # PATH_TO_PRETRAINED_WEIGHTS
+    trans_dim: 384
+    depth: 12
+    num_heads: 4
+    group_size: 32
+    num_group: 512
+    encoder_dims: 256
+    nclasses: 17
+    drop_path_rate: 0.1
+    downsample_targets: [8192, 4096, 2048]
+    extract_layers: [4, 8, 12]
+
+t_predictor:
+  NAME: Ins_T_mean
+  T_args:
+    NAME: sig_t_mean
+    nclasses: 17
+
+# ---------------------------------------------------------------------------- #
+# Training cfgs
+# ---------------------------------------------------------------------------- #
+feature_keys: pos,x
+
+lr: 0.001 #0.001
+min_lr: null
+optimizer:
+  NAME: adamw
+  weight_decay: 1.0e-4 #1.0e-4  # the best 
+
+criterion_args:
+  NAME: Poly1FocalLoss #Weight_CELoss #Poly1FocalLoss
+
+criterion_u_args:
+  NAME: Poly1FocalLoss_U_corr #MSE_Loss_U  #Weight_CELoss_U #Poly1FocalLoss_U  # Poly1FocalLoss_U_T   #Poly1FocalLoss_U_corr
+
+# scheduler
+epochs: 300 #150 100 250 250 300
+sched: multistep
+decay_epochs: [220] #[110, 140] [60, 90] [180, 230] [220] [220]
+decay_rate: 0.1
+warmup_epochs: 0
+
+supervised_epochs: 0
+threshold: 0.0
+unsupervised_loss_weight: 1.0 #1.0
+ema_decay: 0.99
+seed: 1609
+cur_threshold: 0.9
+
+use_contrastive: False
+contrastive_loss_weight: 1.0
+batch_size_l: 2 #3
+batch_size_u: 2 #3
+
+pseudo_refine: False
+
+filter_outlier: False
+ema_t_decay: 0.999
+lambma: 0.9
+
+switch_ep: 50
+
+use_feat_loss: False
+feat_loss_weight: 10.0
+feat_k: 16
+feat_sigma: 1.0
+
+use_identity_loss: False
+identity_loss_weight: 1.0
+
+use_3d_loss: True
+threed_loss_weight: 0.1
+threed_k: 32
+threed_sigma: 1.0
+
+geo_lambma: 0.999
+
+datatransforms:
+  # train: [PointsToTensor, PointCloudScaling,PointCloudCenterAndNormalize,PointCloudJitter,ChromaticDropGPU]
+  train: [PointsToTensor, PointCloudScaling, PointCloudCenterAndNormalize]
+  train_w: [PointsToTensor, PointCloudCenterAndNormalize]  # teacher model is trained without any augmentations
+  # PointCloudScaling_s, PointCloudJitter_s, PointCloudScaleAndTranslate_s, PointCloudTranslation_s, PointCloudRotation_s
+  train_s: [PointsToTensor, PointCloudScaling_s, PointCloudCenterAndNormalize, PointCloudRotation_s, PointCloudTranslation_s]
+  val: [PointsToTensor, PointCloudCenterAndNormalize]
+  test: [PointsToTensor, PointCloudCenterAndNormalize]
+  vote: [PointCloudScaling]
+  kwargs:
+    jitter_sigma: 0.001
+    jitter_clip: 0.005
+    scale: [0.9, 1.1]
+    gravity_dim: 1
+    shift: [0.1, 0.1, 0.1]
+    angle: [0.5,  0.5, 0.5]
+
+    jitter_sigma_s: 0.001
+    jitter_clip_s: 0.005
+    scale_s: [0.8, 1.2]
+    shift_s: [0.2, 0.2, 0.2]
+    angle: [1,  1, 1]
