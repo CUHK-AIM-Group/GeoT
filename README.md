@@ -1,7 +1,7 @@
-[IPMI 2025] GeoT: Geometry-guided Instance-dependent Transition Matrix for Semi-supervised Tooth Point Cloud Segmentation
+### [IPMI 2025] GeoT: Geometry-guided Instance-dependent Transition Matrix for Semi-supervised Tooth Point Cloud Segmentation
 
 
-### Environment
+#### Environment
 ```bash
 git clone https://github.com/CUHK-AIM-Group/GeoT.git
 cd GeoT
@@ -28,7 +28,7 @@ python setup.py install
 cd ..
 ```
 
-### Train
+#### Train
 
 ```
 python examples/segmentation/train.py --cfg cfgs/tooth_semi/transformer_finetune_fixmatch_ntm.yaml
