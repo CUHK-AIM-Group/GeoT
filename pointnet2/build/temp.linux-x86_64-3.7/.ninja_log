@@ -1,0 +1,10 @@
+# ninja log v5
+1	16999	1694952481634785523	/home/whyu/TAP/pointnet2/build/temp.linux-x86_64-3.7/_ext_src/src/interpolate_gpu.o	ea2466e60aaa8bd5
+1	17992	1694952482630757082	/home/whyu/TAP/pointnet2/build/temp.linux-x86_64-3.7/_ext_src/src/group_points_gpu.o	2487a163916521cb
+0	18309	1694952482946748058	/home/whyu/TAP/pointnet2/build/temp.linux-x86_64-3.7/_ext_src/src/ball_query_gpu.o	c52b94a4a82d0de1
+1	19187	1694952483822723045	/home/whyu/TAP/pointnet2/build/temp.linux-x86_64-3.7/_ext_src/src/sampling_gpu.o	13f7d6fad3ae285
+0	23854	1694952488474590200	/home/whyu/TAP/pointnet2/build/temp.linux-x86_64-3.7/_ext_src/src/interpolate.o	c412ea9ae0df218
+0	24171	1694952488798580947	/home/whyu/TAP/pointnet2/build/temp.linux-x86_64-3.7/_ext_src/src/bindings.o	64678fafbc4d5794
+0	24349	1694952488974575921	/home/whyu/TAP/pointnet2/build/temp.linux-x86_64-3.7/_ext_src/src/ball_query.o	76a38570cd55cb31
+0	24620	1694952489250568039	/home/whyu/TAP/pointnet2/build/temp.linux-x86_64-3.7/_ext_src/src/sampling.o	e755bc8ef4816bae
+0	25509	1694952490134542793	/home/whyu/TAP/pointnet2/build/temp.linux-x86_64-3.7/_ext_src/src/group_points.o	15e33cd8d5b49801

@@ -1,0 +1,10 @@
+# ninja log v5
+3	5671	1692877841007083090	/home/whyu/TAP/openpoints/cpp/pointnet2_batch/build/temp.linux-x86_64-3.7/src/interpolate.o	158dd7de8bd9ecc4
+0	5858	1692877841199077785	/home/whyu/TAP/openpoints/cpp/pointnet2_batch/build/temp.linux-x86_64-3.7/src/sampling.o	49f4aa74539f262
+2	6295	1692877841639065627	/home/whyu/TAP/openpoints/cpp/pointnet2_batch/build/temp.linux-x86_64-3.7/src/group_points.o	dea63111956c9e41
+1	7028	1692877842371045402	/home/whyu/TAP/openpoints/cpp/pointnet2_batch/build/temp.linux-x86_64-3.7/src/ball_query.o	aceafb17c6d0615f
+3	16329	1692877851670788382	/home/whyu/TAP/openpoints/cpp/pointnet2_batch/build/temp.linux-x86_64-3.7/src/group_points_gpu.o	f02faa04495c2930
+1	17499	1692877852822756539	/home/whyu/TAP/openpoints/cpp/pointnet2_batch/build/temp.linux-x86_64-3.7/src/pointnet2_api.o	bf95882388d5f8d6
+2	17501	1692877852834756207	/home/whyu/TAP/openpoints/cpp/pointnet2_batch/build/temp.linux-x86_64-3.7/src/ball_query_gpu.o	10899dc1df7c7f24
+4	17901	1692877853242744930	/home/whyu/TAP/openpoints/cpp/pointnet2_batch/build/temp.linux-x86_64-3.7/src/interpolate_gpu.o	7746ff1b87e612bf
+4	19326	1692877854666705566	/home/whyu/TAP/openpoints/cpp/pointnet2_batch/build/temp.linux-x86_64-3.7/src/sampling_gpu.o	1bac0bf06bb4102a

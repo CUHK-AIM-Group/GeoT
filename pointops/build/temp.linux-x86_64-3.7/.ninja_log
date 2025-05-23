@@ -1,0 +1,6 @@
+# ninja log v5
+0	8069	1694952571668213089	/home/whyu/TAP/pointops/build/temp.linux-x86_64-3.7/src/knnquery/knnquery_cuda.o	14e30090d799eeac
+0	8613	1694952572216197423	/home/whyu/TAP/pointops/build/temp.linux-x86_64-3.7/src/sampling/sampling_cuda.o	3485ae19a5843d50
+0	23957	1694952587551758977	/home/whyu/TAP/pointops/build/temp.linux-x86_64-3.7/src/pointops_api.o	12cb0da9efe06908
+0	25718	1694952589315708541	/home/whyu/TAP/pointops/build/temp.linux-x86_64-3.7/src/knnquery/knnquery_cuda_kernel.o	b9261589e37d43db
+0	26590	1694952590183683722	/home/whyu/TAP/pointops/build/temp.linux-x86_64-3.7/src/sampling/sampling_cuda_kernel.o	d72970e658b71405

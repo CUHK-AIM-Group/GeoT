@@ -1,0 +1,16 @@
+# ninja log v5
+8	6462	1692877887573795357	/home/whyu/TAP/openpoints/cpp/pointops/build/temp.linux-x86_64-3.7/src/aggregation/aggregation_cuda.o	cec14152df778223
+6	6773	1692877887881786834	/home/whyu/TAP/openpoints/cpp/pointops/build/temp.linux-x86_64-3.7/src/interpolation/interpolation_cuda.o	425c8ec8c4779165
+3	6799	1692877887909786059	/home/whyu/TAP/openpoints/cpp/pointops/build/temp.linux-x86_64-3.7/src/ballquery/ballquery_cuda.o	5603967a105aaf7e
+7	7043	1692877888153779307	/home/whyu/TAP/openpoints/cpp/pointops/build/temp.linux-x86_64-3.7/src/subtraction/subtraction_cuda.o	2e94ac4fffbad9cc
+5	7074	1692877888185778421	/home/whyu/TAP/openpoints/cpp/pointops/build/temp.linux-x86_64-3.7/src/grouping/grouping_cuda.o	bdcc47a2bb8c3d0d
+2	7176	1692877888289775543	/home/whyu/TAP/openpoints/cpp/pointops/build/temp.linux-x86_64-3.7/src/knnquery/knnquery_cuda.o	9d72fef770ec2620
+4	7830	1692877888941757498	/home/whyu/TAP/openpoints/cpp/pointops/build/temp.linux-x86_64-3.7/src/sampling/sampling_cuda.o	c87b5cfd2d0603f0
+6	17146	1692877898257499636	/home/whyu/TAP/openpoints/cpp/pointops/build/temp.linux-x86_64-3.7/src/grouping/grouping_cuda_kernel.o	8263a469d62f5531
+1	18741	1692877899849455561	/home/whyu/TAP/openpoints/cpp/pointops/build/temp.linux-x86_64-3.7/src/pointops_api.o	ed58e848c8428b04
+7	18984	1692877900093448806	/home/whyu/TAP/openpoints/cpp/pointops/build/temp.linux-x86_64-3.7/src/aggregation/aggregation_cuda_kernel.o	69a63dbc3f66b4e7
+1	19093	1692877900205445705	/home/whyu/TAP/openpoints/cpp/pointops/build/temp.linux-x86_64-3.7/src/interpolation/interpolation_cuda_kernel.o	1c4b90868a2615e
+3	20069	1692877901181418684	/home/whyu/TAP/openpoints/cpp/pointops/build/temp.linux-x86_64-3.7/src/ballquery/ballquery_cuda_kernel.o	be9fa67b3141dbd2
+6	20474	1692877901585407499	/home/whyu/TAP/openpoints/cpp/pointops/build/temp.linux-x86_64-3.7/src/subtraction/subtraction_cuda_kernel.o	f71c1dc1459a7131
+2	20640	1692877901749402958	/home/whyu/TAP/openpoints/cpp/pointops/build/temp.linux-x86_64-3.7/src/knnquery/knnquery_cuda_kernel.o	56aa2ca6e74ef097
+4	20729	1692877901837400522	/home/whyu/TAP/openpoints/cpp/pointops/build/temp.linux-x86_64-3.7/src/sampling/sampling_cuda_kernel.o	17bf7ce547f877d1
